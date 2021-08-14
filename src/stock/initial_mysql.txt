@@ -1,0 +1,34 @@
+create table vendor(
+	id int primary key auto_increment,
+    name varchar(255) not null,
+    phone int not null,
+    email varchar(255) not null,
+    address varchar(255) not null
+    );
+create  table product(
+id int primary key auto_increment,
+pname varchar(255) not null,
+description varchar(255),
+barcode int  not null unique,
+cprice int unsigned not null,
+rprice int unsigned not null,
+qty int unsigned not  null ,
+rlevel int
+);
+
+create table sales(
+id int primary key auto_increment,
+date date,
+subtotal int unsigned,
+pay int ,
+bal int
+);
+
+create table sales_product(
+id int primary key auto_increment,
+sales_id int,
+pid int,
+price int,
+qty int,
+total int
+);
